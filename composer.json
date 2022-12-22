@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "ClarkU_Sentry_Monitoring\\": "src/"
+    }
+  },
+  "require": {
+    "sentry/sdk": "^3.3"
+  }
+}
