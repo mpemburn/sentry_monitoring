@@ -115,7 +115,11 @@ class SentryMonitoringAdminPage
         } catch (\Throwable $exception) {
             captureException($exception);
 
-            wp_send_json(['message' => 'A test error was sent to Sentry ' . date("F j, Y, g:i a"). ' UTC']);
+            $date = date("F j, Y, g:i a") . ' UTC';
+
+            wp_send_json([
+                'message' => 'A test error was sent to Sentry ' . $date . '<br/>"' . $exception->getMessage() . '"'
+            ]);
         }
 
         die();
